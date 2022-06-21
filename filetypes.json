@@ -14,6 +14,14 @@
     "ic": [
         "ico"
     ],
+    "ve": [
+        "pdf",
+        "epub",
+        "svg",
+        "otf",
+        "ttf",
+        "woff"
+    ],
     "d": [
         "json",
         "ppt",
