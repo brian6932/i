@@ -1,16 +1,36 @@
 {
-    "image": [
+    "i": [
         "jpg",
         "png",
         "tiff",
         "tif",
         "bmp",
-        "gif"
+        "gif",
+        "apng",
+        "webp",
+        "avif",
+        "jxl"
     ],
-    "icon": [
+    "ic": [
         "ico"
     ],
-    "document": [
+    "ve": [
+        "pdf",
+        "epub",
+        "svg",
+        "otf",
+        "ttf",
+        "woff"
+    ],
+    "d": [
+        "md",
+        "mkd",
+        "mdwn",
+        "mdown",
+        "mdtxt",
+        "mdtext",
+        "markdown",
+        "text",
         "json",
         "ppt",
         "ppz",
@@ -28,7 +48,7 @@
         "css",
         "rtf"
     ],
-    "video": [
+    "v": [
         "mp4",
         "webm",
         "avi",
@@ -36,24 +56,30 @@
         "mpeg",
         "mpg"
     ],
-    "archive": [
+    "a": [
         "zip",
-        "tar"
+        "tar",
+        "7z"
     ],
-    "code": [
+    "c": [
         "js"
     ],
-    "program": [
+    "p": [
         "exe"
     ],
-    "script": [
+    "s": [
         "sh",
-        "bat"
+        "bat",
+        "ps1"
     ],
-    "library": [
+    "l": [
         "dll"
     ],
-    "song": [
-        "mp3"
+    "s": [
+        "mp3",
+        "m4a",
+        "flac",
+        "wav",
+        "acc"
     ]
 }
