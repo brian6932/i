@@ -20,7 +20,7 @@ It does ***not*** serve the files or handle authentification. It is meant to be 
 ## if you are using nginx
  - Install the `apach2-utils` to generate a htpasswd file for authentification
  - Create a reverse proxy for your webserver. For example use i.example.com/upload to upload the images (by default to port 9005). Add basic auth to hande the authentification.
-    ```
+    ```nginxconf
     location /upload {
         auth_basic "Restricted Content";
         auth_basic_user_file /etc/fileupload.htpasswd;
@@ -44,13 +44,13 @@ It does ***not*** serve the files or handle authentification. It is meant to be 
     ```
  - Base64 encode user:password `echo -n user:yourpassword | base64` and add a header `Authorization: Basic <your base64>` in sharex (image in the nginx example)
 
-## how my caddyfile looks:
+## My Caddyfile:
 `/etc/caddy/Caddyfile`
 ```
 i.alienpls.org {
    root * /usr/share/caddy/
    # Enable the static file server.
-   file_server
+   file_server browse
    reverse_proxy /upload localhost:9005
 }
 ```
