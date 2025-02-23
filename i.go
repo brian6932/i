@@ -16,9 +16,9 @@ import (
 
 var (
 	// the address to listen on
-	address = "127.0.0.1:9005"
+	address = "0.0.0.0:9005"
 	// the directory to save the images in
-	root = "/usr/share/caddy/"
+	root = "/var/www/i/"
 	// the root of the link that will be generated
 	webRoot = "https://i.alienpls.org/"
 
@@ -26,7 +26,7 @@ var (
 	// the program will delete the files older than maxAge every 2 hours
 	maxAge = time.Hour * 24 * 365
 	// files to be ignored when deleting old files
-	deleteIgnoreRegexp = regexp.MustCompile("index\\.html|favicon\\.ico")
+	deleteIgnoreRegexp = regexp.MustCompile(fmt.Sprintf("\\A[^.]{%d,}\\z", randomAdjectivesCount+1))
 
 	// length of the random filename
 	randomAdjectivesCount = 3
@@ -37,7 +37,7 @@ var (
 func main() {
 	rand.Seed(time.Now().UnixNano())
 
-	b, err := ioutil.ReadFile("./filetypes.json")
+	b, err := ioutil.ReadFile("/etc/i/filetypes.json")
 
 	if err == nil {
 		data := make(map[string][]string)
@@ -55,8 +55,8 @@ func main() {
 
 	fmt.Println(filetypes)
 
-	// file, err := os.Open("./adjectives1.txt")
-	file, err := os.Open("./letters1.txt")
+	// file, err := os.Open("/etc/i/adjectives1.txt")
+	file, err := os.Open("/etc/i/letters1.txt")
 
 	if err != nil {
 		panic(err)
